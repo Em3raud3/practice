@@ -1,4 +1,11 @@
-a = [1,2,3,4,5]
-b = [6,7,8,9,10]
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
 
-print([x + y for x,y in zip(a,b)])
+np.random.seed(1234)
+df = pd.DataFrame(np.random.randn(10, 4),
+                  columns=['Col1', 'Col2', 'Col3', 'Col4'])
+boxplot = df.boxplot(column=['Col1', 'Col2', 'Col3'])
+
+print(boxplot)
